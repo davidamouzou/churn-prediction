@@ -1,0 +1,104 @@
+{
+  "Logistic Regression": {
+    "accuracy": 0.6026,
+    "f1": 0.4574,
+    "roc_auc": 0.7161,
+    "precision": 0.3246,
+    "recall": 0.7738,
+    "confusion_matrix": [
+      [
+        613,
+        491
+      ],
+      [
+        69,
+        236
+      ]
+    ],
+    "feature_importance": {
+      "Contract": 1.0459983072689876,
+      "tenure": 0.2730664735995815,
+      "MonthlyCharges": 0.12297122944191086,
+      "InternetService": 0.0861657382678515,
+      "MultipleLines": 0.08012364868448621,
+      "PhoneService": 0.05617575465996946,
+      "TotalCharges": 0.05424622823039611,
+      "TechSupport": 0.042773535067312386,
+      "PaperlessBilling": 0.035107426821414246,
+      "gender": 0.023372771213034833,
+      "PaymentMethod": 0.02334305987091146,
+      "Dependents": 0.011253944221847795,
+      "Partner": 0.006682594887943915,
+      "OnlineSecurity": 0.005982494739951853,
+      "SeniorCitizen": 0.0018399875900010473
+    }
+  },
+  "Random Forest": {
+    "accuracy": 0.6984,
+    "f1": 0.417,
+    "roc_auc": 0.7315,
+    "precision": 0.3585,
+    "recall": 0.4984,
+    "confusion_matrix": [
+      [
+        832,
+        272
+      ],
+      [
+        153,
+        152
+      ]
+    ],
+    "feature_importance": {
+      "Contract": 0.414529761569661,
+      "InternetService": 0.15202924039414967,
+      "PaymentMethod": 0.07556238006524138,
+      "tenure": 0.06360339449992014,
+      "TechSupport": 0.06010601957436846,
+      "MultipleLines": 0.054607400709036365,
+      "TotalCharges": 0.0447410940744114,
+      "MonthlyCharges": 0.04322155404629938,
+      "OnlineSecurity": 0.04119913070286133,
+      "Partner": 0.011064858152086835,
+      "PaperlessBilling": 0.010606366373176006,
+      "gender": 0.010549506632748768,
+      "Dependents": 0.008665813756247314,
+      "SeniorCitizen": 0.005256420119755079,
+      "PhoneService": 0.004257059330036775
+    }
+  },
+  "XGBoost": {
+    "accuracy": 0.6473,
+    "f1": 0.4568,
+    "roc_auc": 0.7255,
+    "precision": 0.3426,
+    "recall": 0.6852,
+    "confusion_matrix": [
+      [
+        703,
+        401
+      ],
+      [
+        96,
+        209
+      ]
+    ],
+    "feature_importance": {
+      "Contract": 0.32294923067092896,
+      "InternetService": 0.14482484757900238,
+      "TechSupport": 0.0928490087389946,
+      "PaymentMethod": 0.09252991527318954,
+      "MultipleLines": 0.06825382262468338,
+      "OnlineSecurity": 0.06497273594141006,
+      "tenure": 0.03555510565638542,
+      "Partner": 0.029382498934864998,
+      "gender": 0.02510330267250538,
+      "PaperlessBilling": 0.023930033668875694,
+      "Dependents": 0.021622411906719208,
+      "TotalCharges": 0.021049292758107185,
+      "MonthlyCharges": 0.020091960206627846,
+      "SeniorCitizen": 0.01869051158428192,
+      "PhoneService": 0.01819532737135887
+    }
+  }
+}
