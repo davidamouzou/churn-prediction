@@ -156,7 +156,7 @@ with tab1:
             hole=0.55,
         )
         fig.update_layout(**plotly_dark(), showlegend=True, height=300, margin=dict(t=20, b=20))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
     with c2:
         st.subheader("Churn par type de contrat")
@@ -167,7 +167,7 @@ with tab1:
             barmode="group",
         )
         fig.update_layout(**plotly_dark(), height=300, margin=dict(t=20, b=20))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
     c3, c4 = st.columns(2)
 
@@ -179,7 +179,7 @@ with tab1:
             nbins=30, barmode="overlay", opacity=0.7,
         )
         fig.update_layout(**plotly_dark(), height=300, margin=dict(t=20, b=20))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
     with c4:
         st.subheader("Charges mensuelles vs Churn")
@@ -188,7 +188,7 @@ with tab1:
             color_discrete_map={"Yes": COLORS["yes"], "No": COLORS["no"]},
         )
         fig.update_layout(**plotly_dark(), height=300, margin=dict(t=20, b=20))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
     st.subheader("Churn par service Internet")
     ci = df_raw.groupby(["InternetService", "Churn"]).size().reset_index(name="count")
@@ -198,7 +198,7 @@ with tab1:
         barmode="group",
     )
     fig.update_layout(**plotly_dark(), height=280, margin=dict(t=20, b=20))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
 
 # ────────────────────────────────────────────────────
 # TAB 2 — Comparaison modèles
@@ -220,7 +220,7 @@ with tab2:
     df_metrics = pd.DataFrame(rows).set_index("Modèle")
     st.dataframe(
         df_metrics.style.highlight_max(color="#3941E320").format("{:.4f}"),
-        use_container_width=True,
+        width="stretch",
     )
 
     # Bar chart comparatif
@@ -242,7 +242,7 @@ with tab2:
         height=350,
         margin=dict(t=20, b=20),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
 
     # Feature importance XGBoost
     st.subheader("Feature Importance — XGBoost (top 10)")
@@ -254,7 +254,7 @@ with tab2:
     )
     fig.update_layout(**plotly_dark(), height=350, margin=dict(t=20, b=20))
     fig.update_coloraxes(showscale=False)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
 
     # Matrice de confusion XGBoost
     st.subheader("Matrice de confusion — XGBoost")
@@ -268,7 +268,7 @@ with tab2:
         text_auto=True,
     )
     fig.update_layout(**plotly_dark(), height=320, margin=dict(t=20, b=20))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
 
 # ────────────────────────────────────────────────────
 # TAB 3 — Prédiction Live
@@ -302,7 +302,7 @@ with tab3:
         monthly = st.slider("Charges mensuelles (€)", 18.0, 119.0, 65.0)
         total = monthly * tenure
 
-    if st.button("🔮 Prédire le churn", use_container_width=True):
+    if st.button("🔮 Prédire le churn", width="stretch"):
         from sklearn.preprocessing import LabelEncoder
 
         # Construire le dataframe client
@@ -369,7 +369,7 @@ with tab3:
             height=280,
             margin=dict(t=20, b=20),
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
         # Facteurs de risque
         if proba > 0.5:
